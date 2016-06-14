@@ -6,13 +6,14 @@
 #    By: gpotte <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/13 14:02:34 by gpotte            #+#    #+#              #
-#    Updated: 2016/06/13 15:42:38 by gpotte           ###   ########.fr        #
+#    Updated: 2016/06/14 15:04:03 by gpotte           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	push_swap	
 
-SRC		=	srcs/main.c srcs/check_args.c srcs/fill_list.c
+SRC		=	srcs/main.c srcs/check_args.c srcs/fill_list.c srcs/push.c \
+			srcs/reverse_rotate.c srcs/rotate.c srcs/swap.c srcs/bubble_sort.c
 
 OBJ		=	$(SRC:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: gpotte <gpotte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/14 11:37:32 by gpotte            #+#    #+#             */
-/*   Updated: 2016/06/14 11:43:40 by gpotte           ###   ########.fr       */
+/*   Updated: 2016/06/14 13:22:13 by gpotte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ra(t_env *env)
 
 	if (env->a_len < 1)
 		return (NULL);
-	i = a_len - 1;
+	i = env->a_len - 1;
 	tmp = env->a_list[env->a_len - 1];
 	while (i > 0)
 	{
@@ -37,7 +37,7 @@ char	*rb(t_env *env)
 
 	if (env->b_len < 1)
 		return (NULL);
-	i = b_len - 1;
+	i = env->b_len - 1;
 	tmp = env->b_list[env->b_len - 1];
 	while (i > 0)
 	{

@@ -6,7 +6,7 @@
 /*   By: gpotte <gpotte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 15:37:57 by gpotte            #+#    #+#             */
-/*   Updated: 2016/06/14 11:05:48 by gpotte           ###   ########.fr       */
+/*   Updated: 2016/06/14 17:07:44 by gpotte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,50 @@ typedef struct	s_env
 	int			b_len;
 	int			*a_list;
 	int			*b_list;
+	int			*sorted;
+	int			i;
 }				t_env;
 
 int				main(int ac, char **av);
 void			check_args(int ac, char **av);
-void			fill_list(int ac, char **av, int **list);
+void			fill_list(int ac, char **av, t_env *env);
 void			init_all(t_env *env, int ac);
 
+/*
+ ** REVERSE_ROTATE
+ */
+
+char			*rra(t_env *env);
+char			*rrb(t_env *env);
+char			*rrr(t_env *env);
+
+/*
+ **	ROTATE
+ */
+
+char			*ra(t_env *env);
+char			*rb(t_env *env);
+char			*rr(t_env *env);
+
+/*
+ ** PUSH
+ */
+
+char			*pa(t_env *env);
+char			*pb(t_env *env);
+
+/*
+ ** SWAP
+ */
+
+char			*sa(t_env *env);
+char			*sb(t_env *env);
+char			*ss(t_env *env);
+
+/*
+ ** BUBBLE_SORT
+ */
+
+void			sort(t_env *env);
+void			bubble_sort(t_env *env);
 #endif
