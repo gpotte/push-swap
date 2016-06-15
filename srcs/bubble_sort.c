@@ -6,33 +6,14 @@
 /*   By: gpotte <gpotte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/14 13:58:02 by gpotte            #+#    #+#             */
-/*   Updated: 2016/06/14 17:26:05 by gpotte           ###   ########.fr       */
+/*   Updated: 2016/06/15 14:56:25 by gpotte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort(t_env *env)
+static void		back_in_a(t_env *env)
 {
-	int	i;
-	int	j;
-
-	j = 0;
-	while (env->a_len > 1)
-	{
-		i = env->a_len - 1;
-		if (env->a_list[i] == env->sorted[j])
-		{
-			ft_putstr(pb(env));
-			j++;
-		}
-		else
-			ft_putstr(ra(env));
-		ft_putchar(' ');
-		env->i++;
-	}
-	ft_putstr(pb(env));
-	ft_putchar(' ');
 	while (env->b_len > 1)
 	{
 		ft_putstr(pa(env));
@@ -43,7 +24,41 @@ void	sort(t_env *env)
 	ft_putnbr(env->i);
 }
 
-void	bubble_sort(t_env *env)
+void			sort(t_env *env)
+{
+	int	i;
+	int	j;
+	int	tmp;
+
+	j = 0;
+	while (env->a_len > 0)
+	{
+		i = env->a_len - 1;
+		tmp = i;
+		while (env->a_list[tmp] != env->sorted[j])
+			tmp--;
+		if (tmp == i)
+		{
+			ft_putstr(pb(env));
+			j++;
+			ft_putchar(' ');
+			env->i++;
+		}
+		else
+			while (env->a_list[i] != env->sorted[j])
+			{
+				if (tmp > env->a_len / 2)
+					ft_putstr(ra(env));
+				else
+					ft_putstr(rra(env));
+			env->i++;
+			ft_putchar(' ');
+			}
+	}
+	back_in_a(env);
+}
+
+void			bubble_sort(t_env *env)
 {
 	int i;
 	int j;
@@ -53,21 +68,18 @@ void	bubble_sort(t_env *env)
 	i = 0;
 	while (i < env->a_len)
 	{
-		j = 0;
+		j = i + 1;
 		flag = 0;
 		while (j < env->a_len)
 		{
-			if (env->sorted[j] < env->sorted[i] && j > i)
+			if (env->sorted[j] < env->sorted[i])
 			{
 				tmp = env->sorted[j];
 				env->sorted[j] = env->sorted[i];
 				env->sorted[i] = tmp;
-				flag = 1;
-				break;
 			}
 			j++;
 		}
-		if (flag == 0)
-			i++;
+		i++;
 	}
 }
