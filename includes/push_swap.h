@@ -6,7 +6,7 @@
 /*   By: gpotte <gpotte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 15:37:57 by gpotte            #+#    #+#             */
-/*   Updated: 2016/06/14 17:07:44 by gpotte           ###   ########.fr       */
+/*   Updated: 2016/06/17 13:15:10 by gpotte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct	s_env
 	int			*b_list;
 	int			*sorted;
 	int			i;
+	int			j;
 }				t_env;
 
 int				main(int ac, char **av);

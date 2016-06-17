@@ -6,53 +6,73 @@
 /*   By: gpotte <gpotte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/14 13:58:02 by gpotte            #+#    #+#             */
-/*   Updated: 2016/06/15 14:56:25 by gpotte           ###   ########.fr       */
+/*   Updated: 2016/06/17 13:20:58 by gpotte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+static void		first_hit(t_env *env)
+{
+	if (env->a_list[env->a_len - 2] == env->sorted[env->i])
+	{
+		ft_putstr(sa(env));
+			env->j++;
+		ft_putchar(' ');
+	}
+}
+
+static int		check_order(t_env *env)
+{
+	int	i;
+
+	i = 0;
+	while (i < env->a_len && env->a_list[i] == env->sorted[i])
+		i++;
+	if (i == env->a_len)
+		return (1);
+	return (0);
+}
 static void		back_in_a(t_env *env)
 {
-	while (env->b_len > 1)
+	first_hit(env);
+	while (env->b_len > 0)
 	{
 		ft_putstr(pa(env));
-		ft_putchar(' ');
-		env->i++;
+			env->j++;
+		if (env->b_len > 0)
+			ft_putchar(' ');
 	}
-	ft_putstr(pa(env));
-	ft_putnbr(env->i);
 }
 
 void			sort(t_env *env)
 {
-	int	i;
-	int	j;
 	int	tmp;
 
-	j = 0;
-	while (env->a_len > 0)
+	if (check_order(env) == 1)
+		exit(EXIT_SUCCESS);
+	first_hit(env);
+	while (env->a_len > 2)
 	{
-		i = env->a_len - 1;
-		tmp = i;
-		while (env->a_list[tmp] != env->sorted[j])
+		tmp = env->a_len - 1;
+		while (env->a_list[tmp] != env->sorted[env->i])
 			tmp--;
-		if (tmp == i)
+		if (env->a_len - 1 == tmp)
 		{
 			ft_putstr(pb(env));
-			j++;
-			ft_putchar(' ');
 			env->i++;
+			env->j++;
+			ft_putchar(' ');
 		}
 		else
-			while (env->a_list[i] != env->sorted[j])
+			while (env->a_list[env->a_len - 1] != env->sorted[env->i])
 			{
-				if (tmp > env->a_len / 2)
+				if (tmp > (env->a_len / 2))
 					ft_putstr(ra(env));
 				else
 					ft_putstr(rra(env));
-			env->i++;
 			ft_putchar(' ');
+			env->j++;
 			}
 	}
 	back_in_a(env);

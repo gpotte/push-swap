@@ -6,7 +6,7 @@
 /*   By: gpotte <gpotte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 15:00:32 by gpotte            #+#    #+#             */
-/*   Updated: 2016/06/14 13:59:06 by gpotte           ###   ########.fr       */
+/*   Updated: 2016/06/17 13:03:35 by gpotte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	check_args(int ac, char **av)
 	int i;
 
 	i = 1;
-	if (ac < 2)
-		ft_error();
+	if (ac < 3)
+		exit(EXIT_SUCCESS);
 	while (av[i])
 	{
 		if (ft_str_isdigit(av[i]) == -1)

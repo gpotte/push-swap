@@ -6,7 +6,7 @@
 /*   By: gpotte <gpotte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 14:56:06 by gpotte            #+#    #+#             */
-/*   Updated: 2016/06/15 14:30:09 by gpotte           ###   ########.fr       */
+/*   Updated: 2016/06/17 13:16:44 by gpotte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,24 @@
 
 int		main(int ac, char **av)
 {
-	int 	i;
 	t_env	env;
 
-	i = 0;
 	check_args(ac, av);
 	init_all(&env, ac);
 	fill_list(ac, av, &env);
 	bubble_sort(&env);
 	sort(&env);
+		ft_putnbr(env.j);
 }
 
 void	init_all(t_env *env, int ac)
 {
-	if (!(env->a_list = malloc(ac - 1)) || !(env->b_list = malloc(ac - 1)) ||
-			!(env->sorted = malloc(ac - 1)))
+	if (!(env->a_list = malloc(sizeof(int) * ac - 1)) ||
+			!(env->b_list = malloc(sizeof(int) * ac - 1)) ||
+			!(env->sorted = malloc(sizeof(int) * ac - 1)))
 		ft_error();
 	env->a_len = ac - 1;
 	env->b_len = 0;
-	env->i = 2;
+	env->i = 0;
+	env->j = 0;
 }
