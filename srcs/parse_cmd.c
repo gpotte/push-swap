@@ -1,33 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   parse_cmd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpotte <gpotte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/20 13:25:44 by gpotte            #+#    #+#             */
-/*   Updated: 2016/06/20 17:45:00 by gpotte           ###   ########.fr       */
+/*   Created: 2016/06/20 16:15:56 by gpotte            #+#    #+#             */
+/*   Updated: 2016/06/20 17:36:40 by gpotte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		main(int ac, char **av)
+void	parse_cmd(t_env *env)
 {
-	t_env	env;
-
-	check_args(ac, av);
-	init_all(&env, ac);
-	fill_list(ac, av, &env);
-	bubble_sort(&env);
-	check_order(&env);
-	if (env.a_len > 100)
-		pre_sort(&env);
-	if (env.a_len > 3)
-		sort(&env);
-//	else
-//		3_args(&env);
-	ft_putchar('\n');
-	ft_putstr("\x1b[0m");
-	ft_putnbr(env.j);
+	if (ft_strlen(env->cmd[0]) < 4 || ft_strlen(env->cmd[0]) > 5)
+		ft_error();
 }

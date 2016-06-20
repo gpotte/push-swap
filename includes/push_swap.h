@@ -6,12 +6,13 @@
 /*   By: gpotte <gpotte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 15:37:57 by gpotte            #+#    #+#             */
-/*   Updated: 2016/06/17 13:15:10 by gpotte           ###   ########.fr       */
+/*   Updated: 2016/06/20 17:38:21 by gpotte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+# define CHUNKS 18
 
 # include <stdlib.h>
 # include <unistd.h>
@@ -21,11 +22,13 @@ typedef struct	s_env
 {
 	int			a_len;
 	int			b_len;
+	int			sorted_len;
 	int			*a_list;
 	int			*b_list;
 	int			*sorted;
 	int			i;
 	int			j;
+	char		**cmd;
 }				t_env;
 
 int				main(int ac, char **av);
@@ -70,4 +73,14 @@ char			*ss(t_env *env);
 
 void			sort(t_env *env);
 void			bubble_sort(t_env *env);
+void			check_order(t_env *env);
+void			pre_sort(t_env *env);
+
+/*
+ ** CHECKER
+ */
+
+int				checker(int ac, char **av);
+void			parse_cmd(t_env *env);
+
 #endif

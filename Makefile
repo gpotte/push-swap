@@ -6,7 +6,7 @@
 #    By: gpotte <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/13 14:02:34 by gpotte            #+#    #+#              #
-#    Updated: 2016/06/17 16:31:20 by gpotte           ###   ########.fr        #
+#    Updated: 2016/06/20 17:58:13 by gpotte           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,10 +15,12 @@ NAME	=	push_swap
 NAME2	=	checker
 
 SRC		=	srcs/push_swap.c srcs/check_args.c srcs/fill_list.c srcs/push.c \
-			srcs/reverse_rotate.c srcs/rotate.c srcs/swap.c srcs/bubble_sort.c
+			srcs/reverse_rotate.c srcs/rotate.c srcs/swap.c srcs/bubble_sort.c \
+			srcs/pre_sort.c srcs/init.c
 
-SRC2	=	srcs/checker.c	srcs/check_args.c srcs/fill_list.c srcs/push.c \
-			srcs/reverse_rotate.c srcs/rotate.c srcs/swap.c srcs/bubble_sort.c
+SRC2	=	srcs/checker.c srcs/check_args.c srcs/fill_list.c srcs/push.c \
+			srcs/reverse_rotate.c srcs/rotate.c srcs/swap.c srcs/bubble_sort.c \
+			srcs/parse_cmd.c srcs/init.c
 
 OBJ		=	$(SRC:.c=.o)
 
@@ -42,7 +44,7 @@ $(NAME): $(OBJ)
 	@make -C libft/
 	@$(CC) $(CFLAGS) -o $(NAME) $(SRC) $(INC) $(LIB)
 
-$(NAME2): $(OBJ)
+$(NAME2): $(OBJ2)
 	@make -C libft/
 	@$(CC) $(CFLAGS) -o $(NAME2) $(SRC2) $(INC) $(LIB)
 

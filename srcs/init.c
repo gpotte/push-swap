@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpotte <gpotte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/20 13:25:44 by gpotte            #+#    #+#             */
-/*   Updated: 2016/06/20 17:45:00 by gpotte           ###   ########.fr       */
+/*   Created: 2016/06/20 17:44:05 by gpotte            #+#    #+#             */
+/*   Updated: 2016/06/20 17:44:26 by gpotte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		main(int ac, char **av)
+void	init_all(t_env *env, int ac)
 {
-	t_env	env;
-
-	check_args(ac, av);
-	init_all(&env, ac);
-	fill_list(ac, av, &env);
-	bubble_sort(&env);
-	check_order(&env);
-	if (env.a_len > 100)
-		pre_sort(&env);
-	if (env.a_len > 3)
-		sort(&env);
-//	else
-//		3_args(&env);
-	ft_putchar('\n');
-	ft_putstr("\x1b[0m");
-	ft_putnbr(env.j);
+	if (!(env->a_list = malloc(sizeof(int) * ac - 1)) ||
+			!(env->b_list = malloc(sizeof(int) * ac - 1)) ||
+			!(env->sorted = malloc(sizeof(int) * ac - 1)))
+		ft_error();
+	env->a_len = ac;
+	env->sorted_len = ac - 1;
+	env->b_len = 0;
+	env->i = env->a_len - 1;
+	env->j = 0;
 }
