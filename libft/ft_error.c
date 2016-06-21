@@ -6,14 +6,14 @@
 /*   By: gpotte <gpotte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 15:43:10 by gpotte            #+#    #+#             */
-/*   Updated: 2016/06/13 15:45:55 by gpotte           ###   ########.fr       */
+/*   Updated: 2016/06/21 12:56:36 by gpotte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-void	ft_error()
+void	ft_error(void)
 {
 	ft_putstr_fd("Error\n", 2);
 	exit(EXIT_FAILURE);

@@ -6,22 +6,45 @@
 /*   By: gpotte <gpotte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/14 13:58:02 by gpotte            #+#    #+#             */
-/*   Updated: 2016/06/20 14:55:17 by gpotte           ###   ########.fr       */
+/*   Updated: 2016/06/21 14:49:12 by gpotte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	check_order(t_env *env)
+void			check_order(t_env *env)
 {
 	int	i;
+	int	j;
 
 	i = 0;
-	while (i < env->a_len && env->a_list[i] == env->sorted[i])
+	j = env->a_len - 1;
+	while (i < env->a_len && env->a_list[j] == env->sorted[i])
+	{
 		i++;
+		j--;
+	}
 	if (i == env->a_len && env->b_len == 0)
 		exit(EXIT_SUCCESS);
 }
+
+int				check(t_env *env)
+{
+	int	i;
+	int	j;
+
+	i = env->a_len - 1;
+	j = 0;
+	while (i > 0 && env->a_list[i] == env->sorted[j])
+	{
+		i--;
+		j++;
+	}
+	if (i == 0 && env->b_len == 0)
+		return (1);
+	return (0);
+}
+
 static void		push_to_b(t_env *env)
 {
 	while (env->a_len > 0)
@@ -33,16 +56,11 @@ static void		push_to_b(t_env *env)
 
 void			sort(t_env *env)
 {
-	int	tmp;
-
 	check_order(env);
 	push_to_b(env);
 	ft_putchar('\n');
 	while (env->b_len > 0)
 	{
-		tmp = env->b_len - 1;
-		while (env->b_list[tmp] != env->sorted[env->i])
-			tmp--;
 		if (env->b_list[env->b_len - 1] == env->sorted[env->i])
 		{
 			ft_putstr(pa(env));
@@ -53,11 +71,11 @@ void			sort(t_env *env)
 		else
 			while (env->b_list[env->b_len - 1] != env->sorted[env->i])
 			{
-				if (tmp > (env->b_len / 2))
+				if (next_pos(env, env->b_list, env->i) > (env->b_len / 2))
 					ft_putstr(rb(env));
 				else
 					ft_putstr(rrb(env));
-			ft_putchar(' ');
+				ft_putchar(' ');
 			}
 	}
 }

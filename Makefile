@@ -6,7 +6,7 @@
 #    By: gpotte <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/13 14:02:34 by gpotte            #+#    #+#              #
-#    Updated: 2016/06/20 17:58:13 by gpotte           ###   ########.fr        #
+#    Updated: 2016/06/21 14:18:04 by gpotte           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,11 @@ NAME2	=	checker
 
 SRC		=	srcs/push_swap.c srcs/check_args.c srcs/fill_list.c srcs/push.c \
 			srcs/reverse_rotate.c srcs/rotate.c srcs/swap.c srcs/bubble_sort.c \
-			srcs/pre_sort.c srcs/init.c
+			srcs/pre_sort.c srcs/init.c srcs/few_args.c srcs/next_pos.c
 
 SRC2	=	srcs/checker.c srcs/check_args.c srcs/fill_list.c srcs/push.c \
 			srcs/reverse_rotate.c srcs/rotate.c srcs/swap.c srcs/bubble_sort.c \
-			srcs/parse_cmd.c srcs/init.c
+			srcs/parse_cmd.c srcs/init.c srcs/few_args.c srcs/next_pos.c
 
 OBJ		=	$(SRC:.c=.o)
 
