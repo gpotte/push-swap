@@ -6,7 +6,7 @@
 /*   By: gpotte <gpotte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/21 12:58:30 by gpotte            #+#    #+#             */
-/*   Updated: 2016/06/21 14:43:43 by gpotte           ###   ########.fr       */
+/*   Updated: 2016/06/23 17:16:54 by gpotte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,8 @@ void		few_args(t_env *env)
 {
 	if (env->a_len > 3)
 		penta_arg(env);
+	else if (env->a_len == 2)
+		ft_putstr(sa(env));
 	else
 		triple_arg(env);
 }
