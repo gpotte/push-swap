@@ -6,7 +6,7 @@
 /*   By: gpotte <gpotte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/20 13:25:44 by gpotte            #+#    #+#             */
-/*   Updated: 2016/06/21 14:33:29 by gpotte           ###   ########.fr       */
+/*   Updated: 2016/07/11 10:23:29 by gpotte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,4 @@ int		main(int ac, char **av)
 		few_args(&env);
 	ft_putchar('\n');
 	ft_putstr("\x1b[0m");
-	ft_putnbr(env.j);
 }

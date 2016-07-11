@@ -6,13 +6,13 @@
 /*   By: gpotte <gpotte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 15:37:57 by gpotte            #+#    #+#             */
-/*   Updated: 2016/06/21 14:17:25 by gpotte           ###   ########.fr       */
+/*   Updated: 2016/06/23 17:18:40 by gpotte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-# define CHUNKS 18
+# define CHUNKS 16
 
 # include <stdlib.h>
 # include <unistd.h>
