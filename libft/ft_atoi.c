@@ -6,7 +6,7 @@
 /*   By: gpotte <gpotte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/27 10:17:53 by gpotte            #+#    #+#             */
-/*   Updated: 2016/06/13 16:34:50 by gpotte           ###   ########.fr       */
+/*   Updated: 2016/09/30 12:14:35 by gpotte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int			ft_atoi(const char *s)
 {
 	int				i;
-	int				j;
+	long int		j;
 	int				sign;
 
 	sign = 1;
@@ -33,5 +33,7 @@ int			ft_atoi(const char *s)
 		j = (j * 10) + (s[i] - 48);
 		++i;
 	}
+	if (j * sign < -2147483648 || j * sign > 2147483647)
+		ft_error();
 	return (sign * j);
 }

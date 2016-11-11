@@ -6,7 +6,7 @@
 /*   By: gpotte <gpotte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/14 11:29:50 by gpotte            #+#    #+#             */
-/*   Updated: 2016/06/20 15:42:35 by gpotte           ###   ########.fr       */
+/*   Updated: 2016/10/24 10:31:50 by gpotte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*pa(t_env *env)
 	env->b_len--;
 	env->a_len++;
 	env->j++;
-	return ("\x1b[32mpa");
+	return ("pa");
 }
 
 char	*pb(t_env *env)
@@ -31,5 +31,5 @@ char	*pb(t_env *env)
 	env->a_len--;
 	env->b_len++;
 	env->j++;
-	return ("\x1b[33mpb");
+	return ("pb");
 }

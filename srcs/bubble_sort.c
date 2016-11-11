@@ -6,7 +6,7 @@
 /*   By: gpotte <gpotte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/14 13:58:02 by gpotte            #+#    #+#             */
-/*   Updated: 2016/06/21 14:49:12 by gpotte           ###   ########.fr       */
+/*   Updated: 2016/10/24 10:50:18 by gpotte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,12 @@ int				check(t_env *env)
 
 static void		push_to_b(t_env *env)
 {
-	while (env->a_len > 0)
+	while (env->a_len > 1)
 	{
 		ft_putstr(pb(env));
-		ft_putchar(' ');
+		ft_putchar('\n');
 	}
+	ft_putstr(pb(env));
 }
 
 void			sort(t_env *env)
@@ -66,7 +67,7 @@ void			sort(t_env *env)
 			ft_putstr(pa(env));
 			env->i--;
 			if (env->b_len > 0)
-				ft_putchar(' ');
+				ft_putchar('\n');
 		}
 		else
 			while (env->b_list[env->b_len - 1] != env->sorted[env->i])
@@ -75,7 +76,7 @@ void			sort(t_env *env)
 					ft_putstr(rb(env));
 				else
 					ft_putstr(rrb(env));
-				ft_putchar(' ');
+				ft_putchar('\n');
 			}
 	}
 }
@@ -85,13 +86,11 @@ void			bubble_sort(t_env *env)
 	int i;
 	int j;
 	int tmp;
-	int	flag;
 
 	i = 0;
 	while (i < env->a_len)
 	{
 		j = i + 1;
-		flag = 0;
 		while (j < env->a_len)
 		{
 			if (env->sorted[j] < env->sorted[i])

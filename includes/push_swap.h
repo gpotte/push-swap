@@ -6,13 +6,13 @@
 /*   By: gpotte <gpotte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/13 15:37:57 by gpotte            #+#    #+#             */
-/*   Updated: 2016/06/23 17:18:40 by gpotte           ###   ########.fr       */
+/*   Updated: 2016/10/26 13:22:52 by gpotte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-# define CHUNKS 16
+# define CHUNKS 10
 
 # include <stdlib.h>
 # include <unistd.h>
@@ -33,7 +33,7 @@ typedef struct	s_env
 int				main(int ac, char **av);
 void			check_args(int ac, char **av);
 void			fill_list(int ac, char **av, t_env *env);
-void			init_all(t_env *env, int ac);
+void			init_all(t_env *env, int ac, char **av);
 
 /*
 ** REVERSE_ROTATE

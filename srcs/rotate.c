@@ -6,7 +6,7 @@
 /*   By: gpotte <gpotte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/14 11:37:32 by gpotte            #+#    #+#             */
-/*   Updated: 2016/06/20 15:43:28 by gpotte           ###   ########.fr       */
+/*   Updated: 2016/10/24 10:32:37 by gpotte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ra(t_env *env)
 	}
 	env->a_list[i] = tmp;
 	env->j++;
-	return ("\x1b[34mra");
+	return ("ra");
 }
 
 char	*rb(t_env *env)
@@ -47,7 +47,7 @@ char	*rb(t_env *env)
 	}
 	env->b_list[i] = tmp;
 	env->j++;
-	return ("\x1b[35mrb");
+	return ("rb");
 }
 
 char	*rr(t_env *env)
@@ -55,5 +55,5 @@ char	*rr(t_env *env)
 	rb(env);
 	ra(env);
 	env->j--;
-	return ("\x1b[35mrr");
+	return ("rr");
 }
