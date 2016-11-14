@@ -50,6 +50,7 @@ $(NAME2): $(OBJ2)
 
 clean:
 	@echo " - Cleaning object files..."
+	@make clean -C libft/
 	@rm -f $(OBJ)
 	@rm -f $(OBJ2)
 
