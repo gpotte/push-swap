@@ -23,13 +23,14 @@ int	ft_str_isdigit(char *str)
 {
 	int i;
 
-	i = -1;
-	while (str[++i])
+	i = 0;
+	while (str[i])
 	{
 		if ((str[i] == '-' || str[i] == '+') && i == 0)
 			i++;
 		if (str[i] < 48 || str[i] > 57)
 			return (-1);
+		i++;
 	}
 	return (0);
 }

@@ -51,7 +51,7 @@ void		single_arg_fill(char *str, t_env *env)
 		j++;
 		i--;
 	}
-	check_dubs(len + 1, env);
+	check_dubs(len, env);
 	while (i < env->a_len)
 	{
 		env->sorted[i] = env->a_list[i];
